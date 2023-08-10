@@ -1,0 +1,552 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+/* Add fonts from the app's server 
+    @font-face {                
+      font-family: 'FontName';
+      src: url('FontName.woff2') format('woff2');
+    } 
+    ...or hosted services like Google Fonts 
+    @import url(//fonts.googleapis.com/css?family=Font+Name);
+  */
+
+  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+
+  /* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+  /* npm install modern-normalize
+            Resets elements for browser consistency.  
+            https://www.npmjs.com/package/modern-normalize
+          */
+  
+  /* Component-specific stylesheets, if any. 
+      @import "component1.css";   
+    */
+@import "~react-image-gallery/styles/css/image-gallery.css";
+  
+  /*   ----- Variables  -----  */
+  :root {
+      --inline-important: #cadae4;
+      --pale-blue: #F0F8FF;
+      --medium-color: #72A0C1;
+      --dark-color: #023291;
+      --light-color: #7CB9E8;
+      --accent-contrast-color: #96d1c3;
+      --opacity-alpha-color: #A3C1AD80;
+      --text-color: #1d1c1c;
+      --necessary-green: #15783d;
+      --necessary-red: #d21313;
+      --grey-form-text: rgb(63, 60, 60);
+      --form-color: #f5f9f9;
+      --secondary-form-color: #f4f4f4;
+  }
+  
+  /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+  body {
+      /* Can alternatively define in html {} or :root {} */
+      background-color: var(--pale-blue);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(images/zoomed-in-water-background.jpg);
+      background-size: cover;
+      background-position: center center;
+      color: var(--text-color);
+      /* Define with at least one font name and its related generic family name.*/
+      font-family: 'Hind Siliguri', sans-serif;
+      margin: auto;
+      padding: 20px;
+      max-width: 80%
+  }
+  
+  /*  ----- Page layout blocks -----  */
+  header {
+      background-color: var(--inline-important);
+      color: var(--dark-color);
+      margin: 0.25%;
+      padding: 0.5%;
+      border: var(--dark-color);
+      border-style: solid;
+      border-radius: 2em;
+  }
+  
+  main {
+      background-color: var(--pale-blue);
+      color: var(--dark-color);
+      margin: 2.5%;
+      padding: 3%;
+      border: var(--dark-color);
+      border-style: solid;
+      border-radius: 2em;
+  }
+  
+  /* .gallery {
+      display: flex;
+      flex-flow: row wrap;
+  } */
+  
+  section {}
+  
+  article {}
+  
+  #topic1 {}
+  
+  #topic2 {}
+  
+  div {}
+  
+  aside {}
+  
+  footer {
+      background-color: var(--inline-important);
+      color: var(--dark-color);
+      margin: 1%;
+      padding: 0.5%;
+      border: var(--dark-color);
+      border-style: solid;
+      border-radius: 2em;
+  }
+  
+  /* ----- Anchors ----- Text links */
+  a {}
+  
+  a:link {}
+  
+  a:hover {}
+  
+  a:active {}
+  
+  a:visited {}
+  
+  /*  ----- Navigation ----- Override text links for navigation only.  */
+  nav {
+      text-align: center;
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+  }
+  
+  nav a {
+      border: 2px solid var(--dark-color);
+      border-radius: 5px 5px 0 0;
+      color: var(--dark-color);
+      background-color: var(--accent-contrast-color);
+      margin-right: 3px;
+      padding: 3px 20px 5px 20px;
+      text-decoration: none;
+  }
+  
+  nav a:hover {
+      text-decoration: none;
+      background-color: var(--light-color)
+  }
+  
+  
+  /*  ----- Form ----- */
+  
+  fieldset {
+      color: var(--dark-color);
+      border: 2px solid;
+      border-color: var(--medium-color);
+      margin-top: 2%;
+      padding: 2%;
+      background-color: var(--form-color);
+  }
+  
+  legend {
+      color: var(--dark-color);
+      font-size: 110%;
+      font-weight: bold;
+      border: 2px var(--dark-color);
+      border-style: double;
+      background-color: var(--form-color);
+      margin-top: 2%;
+      padding: 0.5%
+  }
+  
+  label {
+      display: block;
+      margin-top: 0.5%;
+      font-size: 105%;
+  }
+  
+  label.required:after {
+      content: "* - Required";
+      color: var(--necessary-red);
+  }
+  
+  *::placeholder {
+      color: var(--grey-form-text);
+  }
+  
+  *:required {
+      border: 2px solid var(--necessary-red);
+  }
+  
+  /* *:required::after {
+      border: 2px solid var(--necessary-green);
+  } */
+  
+  input {
+      display: block;
+      font-size: 110%;
+      padding: 1.5%;
+      font-family: inherit;
+  }
+  
+  input:focus {
+      border: 3px solid;
+      background-color: var(--inline-important);
+      border-color: var(--dark-color);
+  }
+  
+  input:valid {
+      border: 2px solid var(--necessary-green);
+  }
+  
+  
+  button {
+      font-weight: 600;
+      color: var(--dark-color);
+      font-size: 110%;
+      padding: 0.8%;
+      font-family: inherit;
+  }
+  
+  select {
+      color: var(--dark-color);
+      text-align: center;
+      font-size: 110%;
+      padding: 0.5%;
+      font-family: inherit;
+  }
+  
+  textarea {
+      font-size: 110%;
+      padding: 0.8%;
+      font-family: inherit;
+      width: 400px;
+      height: 100px;
+  }
+  
+  textarea:valid {
+      border: 2px solid var(--necessary-green);
+  }
+  
+  /*  -----  Typography  ----- */
+  p {}
+  
+  br {}
+  
+  ol,
+  ul,
+  dl {}
+  
+  li {}
+  
+  dt {}
+  
+  dd {}
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {}
+  
+  h1 {}
+  
+  h2 {}
+  
+  h3 {}
+  
+  h4 {}
+  
+  h5 {}
+  
+  h6 {}
+  
+  abbr {}
+  
+  acronym {}
+  
+  address {}
+  
+  blockquote {}
+  
+  q {}
+  
+  cite {}
+  
+  em {}
+  
+  hr {}
+  
+  mark {}
+  
+  s {}
+  
+  span {}
+  
+  strong {}
+  
+  sub {}
+  
+  sup {}
+  
+  time {}
+  
+  /*  ----- Coding or instructional typography ----- */
+  pre {}
+  
+  code {}
+  
+  kbd {}
+  
+  samp {}
+  
+  var {}
+  
+  del {}
+  
+  ins {}
+  
+  /*  ----- Table ----- */
+  table {
+      border: 2px solid var(--dark-color);
+      font-family: Sans-serif;
+      color: var(--dark-color);
+      margin: 2px;
+      padding: 3px;
+  }
+  
+  caption {
+      background-color: var(--secondary-form-color);
+      border: 2px solid var(--dark-color);
+      color: var(--dark-color);
+      margin: 2px;
+      padding: 3px;
+  }
+  
+  thead {}
+  
+  tbody {}
+  
+  tfoot {}
+  
+  tr th {
+      background-color: var(--secondary-form-color);
+      border: 2px solid var(--dark-color);
+      color: var(--dark-color);
+      margin: 2px;
+      padding: 5px;
+  }
+      tr:nth-child(even) td {background-color: var(--inline-important);}
+      tr:nth-child(odd) td {background-color: var(--light-color);}
+  
+  .alignment {
+      text-align: right;
+  }
+  
+  tr:nth-child(even) {}
+  
+  th {}
+  
+  tr td {
+      border: 2px solid var(--medium-color);
+      color: var(--dark-color);
+      background-color: var(--secondary-form-color);
+      margin: 2px;
+      padding: 5px;
+  }
+  
+  tr:nth-child(even) td {background-color: var(--inline-important);}
+  tr:nth-child(odd) td {background-color: var(--light-color);}
+  
+  td:nth-child(1) {}
+  
+  colgroup {}
+  
+  data {}
+  
+  datalist {}
+  
+  
+  /*  ----- Form ----- */
+  /* form {} */
+  
+  /* fieldset {
+      border: 1px solid var(--dark-color);
+      padding: 2.5%;
+      margin-top: 2.5%;
+  } */
+  
+  /* legend {
+      color: var(--dark-color);
+      font-weight: 600;
+      font-size: 120%;
+  }
+  
+  label {
+      display: block;
+      margin-top: 2.5%;
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+      padding: 2%;
+      font-family: ;
+  }
+  
+  
+  output {}
+  
+  meter {}
+  
+  progress {}
+  
+  
+  optgroup {}
+  
+  option {} */
+  
+  
+  /* ----- Media ----- */
+  figure {}
+  
+  figcaption {}
+  
+  figure img {}
+  
+  svg {}
+  
+  picture {}
+  
+  source {}
+  
+  iframe {}
+  
+  video {}
+  
+  audio {}
+  
+  embed {}
+  
+  object {}
+  
+  /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+  .gallery figure {
+      width: 320px;
+      margin: .75%;
+      padding: 0;
+      border: 1px solid var(--dark-color);
+      color: var(--dark-color);
+  }
+  
+  .gallery img {
+      width: 100%;
+  }
+  
+  .gallery figcaption {
+      display: block;
+      padding: 3px;
+  }
+  
+  
+  .floatright {}
+  
+  .floatleft {}
+  
+  .center-middle {}
+  
+  .ten {}
+  
+  .twenty {}
+  
+  .thirty {}
+  
+  .forty {}
+  
+  .fifty {}
+  
+  .sixty {}
+  
+  .seventy {}
+  
+  .eighty {}
+  
+  .radius {}
+  
+  .circle {}
+  
+  .boxshadow {}
+  
+  .tshadow {}
+  
+  .gradient {}
+  
+  .shape {}
+  
+  @keyframes App-logo {}
+  
+  /*   ===== TABLET  media query overrides mobile styles ===== */
+  @media all and (min-width: 600px) {}
+  
+  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+  @media all and (min-width: 1080px) {}
+  
+  /*   ===== PRINT  media query overrides previous styles =====  */
+  @media print {}
+
+.image-gallery-description {
+    left:100px!important;
+    bottom:0px!important;
+  }
+
+/* React default css content.
+
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
